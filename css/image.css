@@ -1,0 +1,21 @@
+#stack-pane{
+    -fx-background-image: url("../assets/img/Feuillets-autocollants--Post-it-.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 500 500;
+    -fx-background-position: center center;
+}
+
+.button {
+    -fx-border-width: 2;
+    -fx-border-color: #FFE4C4;
+    -fx-background-color: #FFDAB9;
+    cursor: pointer; // seems like Cursor.HAND
+}
+
+.button:hover {
+    -fx-background-color: #FFC125;
+}
+
+.button:pressed {
+    -fx-background-color: #FFDAB9;
+}
