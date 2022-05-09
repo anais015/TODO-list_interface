@@ -6,7 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -18,13 +21,24 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage FirstStage) throws IOException {
         stage = FirstStage;
+
+       // String musicFile = "village_cocorico.mp3";
+       // Media sound = new Media(new File(musicFile).toURI().toString());
+       // MediaPlayer mediaPlayer = new MediaPlayer(sound);
+       // mediaPlayer.play();
+
         fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/appli/todolist_interface/hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        StackPane root = new StackPane();
-        root.setId("stack-pane");
-        //Scene coucou = new Scene(root, 650, 650);
-        //scene.getStylesheets().add(String.valueOf(this.getClass().getResource("////css/image.css")));
+        //Parent root = ;
+        //Scene scene = new Scene(fxmlLoader.load());
+
         stage.setTitle("TODO-list");
+
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root);
+
+        //String css = this.getClass().getResource("image.css").toExternalForm();
+        //scene.getStylesheets().add(css);
+
         stage.setScene(scene);
         stage.show();
     }

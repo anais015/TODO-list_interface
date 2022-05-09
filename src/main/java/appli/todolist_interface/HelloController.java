@@ -61,6 +61,6 @@ public class HelloController {
 
     @FXML
     void Quitter(ActionEvent event) {
-        HelloApplication.changeScene("/appli/todolist_interface/deco");
+        HelloApplication.changeScene("/appli/todolist_interface/deco", new deco());
     }
 }

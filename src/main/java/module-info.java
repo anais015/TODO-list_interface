@@ -10,6 +10,7 @@ module todolist_interface.todolist_interface {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.sql;
+    requires javafx.media;
 
     opens appli.todolist_interface to javafx.fxml;
     exports appli.todolist_interface;

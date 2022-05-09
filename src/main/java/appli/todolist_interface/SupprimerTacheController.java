@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
-public class SupprimerController {
+public class SupprimerTacheController {
 
     @FXML
     private ComboBox<?> Choix_tache;

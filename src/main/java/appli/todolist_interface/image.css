@@ -1,8 +1,17 @@
-#stack-pane{
-    -fx-background-image: url("../assets/img/Feuillets-autocollants--Post-it-.jpg");
+/*#stack-pane{
+    -fx-background-image: url("../../../../../assets/img/bg.gif");
     -fx-background-repeat: no-repeat;
-    -fx-background-size: 500 500;
+    -fx-background-size: cover;
     -fx-background-position: center center;
+}*/
+
+.root{
+    -fx-background-color: #FFE4C4;
+}
+
+.label{
+    -fx-font: bold italic 20pt "Arial";
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
 }
 
 .button {

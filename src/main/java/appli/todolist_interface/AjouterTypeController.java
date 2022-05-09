@@ -1,4 +1,4 @@
 package appli.todolist_interface;
 
-public class AjouterController {
+public class AjouterTypeController {
 }
