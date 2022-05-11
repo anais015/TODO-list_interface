@@ -14,4 +14,12 @@ module todolist_interface.todolist_interface {
 
     opens appli.todolist_interface to javafx.fxml;
     exports appli.todolist_interface;
+    exports appli.todolist_interface.type;
+    opens appli.todolist_interface.type to javafx.fxml;
+    exports appli.todolist_interface.tache;
+    opens appli.todolist_interface.tache to javafx.fxml;
+    exports appli.todolist_interface.liste;
+    opens appli.todolist_interface.liste to javafx.fxml;
+    exports appli.todolist_interface.todo;
+    opens appli.todolist_interface.todo to javafx.fxml;
 }

@@ -29,12 +29,12 @@ public class HelloApplication extends Application {
 
         fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/appli/todolist_interface/hello-view.fxml"));
         //Parent root = ;
-        //Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(fxmlLoader.load());
 
         stage.setTitle("TODO-list");
 
-        Parent root = fxmlLoader.load();
-        Scene scene = new Scene(root);
+        //Parent root = fxmlLoader.load();
+        //Scene scene = new Scene(root);
 
         //String css = this.getClass().getResource("image.css").toExternalForm();
         //scene.getStylesheets().add(css);
