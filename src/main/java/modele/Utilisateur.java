@@ -96,7 +96,17 @@ public class Utilisateur {
         }
     }
 
-    public String afficherUser () throws Exception {
+    public void inscription(String nom, String prenom, String email, String mdp) throws Exception {
+        Connection con = connexion_bdd.getConnection();
+        PreparedStatement req = con.prepareStatement("INSERT INTO user(nom,prenom,email,mdp) VALUES (?,?,?,?)");
+        req.setString(1, nom);
+        req.setString(2, prenom);
+        req.setString(3, email);
+        req.setString(4, mdp);
+        req.executeUpdate();
+    }
+
+    /*public String afficherUser () throws Exception {
         ArrayList<Utilisateur> userList = new ArrayList<Utilisateur>();
 
         Connection con = connexion_bdd.getConnection();
@@ -111,15 +121,7 @@ public class Utilisateur {
             userList.add(user);
         }
         return userList.toString();
-    }
+    }*/
 
-    public void inscription(String nom, String prenom, String email, String mdp) throws Exception {
-        Connection con = connexion_bdd.getConnection();
-        PreparedStatement req = con.prepareStatement("INSERT INTO user(nom,prenom,email,mdp) VALUES (?,?,?,?)");
-        req.setString(1, nom);
-        req.setString(2, prenom);
-        req.setString(3, email);
-        req.setString(4, mdp);
-        req.executeUpdate();
-    }
+
 }
