@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import modele.Liste;
 import modele.Tache;
 import modele.Type;
@@ -32,7 +33,19 @@ public class CrudController implements Initializable {
                 {"id_type", "id_type"},
                 {"Nom_type", "nom"}
         };
+        for (int i = 0 ; i < colonnes.length ; i ++){
+            TableColumn<Liste,String> myTable= new TableColumn<>(colonnes[i][0]);
+            myTable.setCellValueFactory(new PropertyValueFactory<Liste,String>(colonnes[i][1]));
+            tabliste.getColumns().add(myTable);
 
+            TableColumn<Tache,String> MyTable= new TableColumn<>(colonnes[i][0]);
+            MyTable.setCellValueFactory(new PropertyValueFactory<Tache,String>(colonnes[i][1]));
+            tabtache.getColumns().add(MyTable);
+
+            TableColumn<Type,String> MYTable= new TableColumn<>(colonnes[i][0]);
+            MYTable.setCellValueFactory(new PropertyValueFactory<Type,String>(colonnes[i][1]));
+            tabtype.getColumns().add(MYTable);
+        }
 
     }
 
