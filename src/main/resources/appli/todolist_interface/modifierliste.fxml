@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="294.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="218.0" layoutY="31.0" text="Modifier la liste">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="retour" layoutX="498.0" layoutY="230.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+      <Button fx:id="modifier" layoutX="53.0" layoutY="230.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
+      <ComboBox fx:id="id_liste" layoutX="300.0" layoutY="104.0" prefWidth="150.0" promptText="id de la liste" />
+      <TextField fx:id="nom" layoutX="300.0" layoutY="162.0" />
+      <Label layoutX="28.0" layoutY="108.0" text="Choisissez l'id de la liste à modifier :" />
+      <Label layoutX="136.0" layoutY="166.0" text="Nouveau nom :" />
+   </children>
+</AnchorPane>
