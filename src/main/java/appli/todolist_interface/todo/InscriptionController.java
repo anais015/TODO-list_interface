@@ -82,7 +82,7 @@ public class InscriptionController {
                 System.out.println("Ce n'est pas le même mot de passe");
             }
         }else{
-            user.inscription(nom.getText(), prenom.getText(), email.getText(), mdp.getText());
+            //user.inscription(nom.getText(), prenom.getText(), email.getText(), mdp.getText());
             mdp.setStyle("");
             email.setStyle("");
             nom.setStyle("");

@@ -27,7 +27,7 @@ public class HelloApplication extends Application {
        // MediaPlayer mediaPlayer = new MediaPlayer(sound);
        // mediaPlayer.play();
 
-        fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/appli/todolist_interface/hello-view.fxml"));
+        fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/appli/todolist_interface/intro.fxml"));
         //Parent root = ;
         Scene scene = new Scene(fxmlLoader.load());
 

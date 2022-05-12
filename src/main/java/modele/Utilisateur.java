@@ -5,6 +5,8 @@ import connexion_bdd.connexion_bdd;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Utilisateur {
@@ -15,13 +17,29 @@ public class Utilisateur {
     private String email;
     private String password;
     private boolean estConnecte = false;
+    private connexion_bdd coBdd;
 
     public Utilisateur() {
+        coBdd = new connexion_bdd();
+    }
+
+    public Utilisateur connexion(String email, String password) {
+        this.password = password;
+        this.email = email;
+        return null;
     }
 
     public Utilisateur(String nom, String prenom) {
         setNom(nom);
         setPrenom(prenom);
+    }
+
+    public Utilisateur(int id, String nom, String prenom, String email, String password) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
     }
 
     @Override
@@ -77,51 +95,24 @@ public class Utilisateur {
         this.estConnecte = estConnecte;
     }
 
-    public void connexionUser (Utilisateur user) throws Exception {
-        Connection con = connexion_bdd.getConnection();
-        PreparedStatement req = con.prepareStatement("SELECT * FROM user WHERE email=? and password=?");
-        req.setString(1,user.getEmail());
-        req.setString(2,user.getPassword());
-        ResultSet res = req.executeQuery();
-        if (res.next()){
-            user.setId(res.getInt("id_user"));
-            user.setNom(res.getString("nom"));
-            user.setPrenom(res.getString("prenom"));
-            System.out.println("Bienvenue "+ user.getPrenom()+ " (id: "+ user.getId()+")");
-            this.estConnecte=true;
-        }
-        else{
-            System.out.println("Email ou password incorrect. Veuillez essayer à nouveau.");
-            this.estConnecte=false;
-        }
-    }
-
-    public void inscription(String nom, String prenom, String email, String mdp) throws Exception {
-        Connection con = connexion_bdd.getConnection();
-        PreparedStatement req = con.prepareStatement("INSERT INTO user(nom,prenom,email,mdp) VALUES (?,?,?,?)");
-        req.setString(1, nom);
-        req.setString(2, prenom);
-        req.setString(3, email);
-        req.setString(4, mdp);
-        req.executeUpdate();
-    }
-
-    /*public String afficherUser () throws Exception {
-        ArrayList<Utilisateur> userList = new ArrayList<Utilisateur>();
-
-        Connection con = connexion_bdd.getConnection();
-        PreparedStatement req = con.prepareStatement("SELECT * FROM user");
-        ResultSet res = req.executeQuery();
-        while (res.next()){
-            Utilisateur user = new Utilisateur();
-            user.setId(res.getInt("id_user"));
-            user.setNom(res.getString("nom"));
-            user.setPrenom(res.getString("prenom"));
-
-            userList.add(user);
-        }
-        return userList.toString();
-    }*/
+    public Utilisateur connexion() {
+        Utilisateur user = null;
+        String sql = "SELECT * FROM user WHERE email=? and password=?";
+        PreparedStatement req;
+        try {
+            req = coBdd.getConnection().prepareStatement(sql);
+            req.setString(1, getEmail());
+            req.setString(2, getPassword());
+            ResultSet res = req.executeQuery();
+            if (res.next()) {
+                user = new Utilisateur(res.getInt("id"), res.getString("nom"), res.getString("prenom"), res.getString("email"), res.getString("mdp"));
+            }
+        }   catch(SQLException e){
+    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                return user;
+            }
 
 
 }

@@ -4,10 +4,12 @@ import appli.todolist_interface.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import modele.Utilisateur;
 
-public class HelloController {
+public class ConnexionController {
 
     Utilisateur user = new Utilisateur();
 
@@ -21,10 +23,13 @@ public class HelloController {
     private Button Quitter;
 
     @FXML
+    private Label lblerreur;
+
+    @FXML
     private TextField email;
 
     @FXML
-    private TextField mdp;
+    private PasswordField mdp;
 
     @FXML
     void Connexion(ActionEvent event) {
@@ -47,11 +52,20 @@ public class HelloController {
 
             }
         }else{
-            //user.connexionUser(email.getText(), mdp.getText());
+            System.out.println(email.getText());
+            System.out.println(mdp.getText());
+            Utilisateur user = new Utilisateur();//ça bloque à partir de là
+            Utilisateur u = user.connexion();
+            if(u.getId() > 0){
             mdp.setStyle("");
             email.setStyle("");
-            System.out.println("OK !");// ça fonctionne :-)
+            System.out.println("OK !");
             HelloApplication.changeScene("/appli/todolist_interface/crud", new CrudController());//ça fonctionne !
+                 System.out.println("Utilisateur Connecté");
+            }else{
+                System.out.println("erreur");
+                lblerreur.setText("erreur");
+            }
         }
     }
 
