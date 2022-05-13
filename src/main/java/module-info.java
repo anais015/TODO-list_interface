@@ -22,4 +22,5 @@ module todolist_interface.todolist_interface {
     opens appli.todolist_interface.liste to javafx.fxml;
     exports appli.todolist_interface.todo;
     opens appli.todolist_interface.todo to javafx.fxml;
+    opens modele to javafx.base;
 }

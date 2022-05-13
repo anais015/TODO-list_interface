@@ -7,49 +7,51 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="501.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="452.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="339.0" layoutY="30.0" text="TODO-list">
+      <Label layoutX="408.0" layoutY="29.0" text="TODO-list">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="165.0" layoutY="47.0" text="Nombre_tache :" />
-      <Label fx:id="nbtache" layoutX="255.0" layoutY="47.0" text="Label" />
-      <Label layoutX="165.0" layoutY="69.0" text="Nombre_liste :" />
-      <Label fx:id="nbliste" layoutX="255.0" layoutY="68.0" text="Label" />
-      <Button fx:id="deconnexion" layoutX="354.0" layoutY="77.0" mnemonicParsing="false" onAction="#deconnexion" text="Déconnexion" />
+      <Label layoutX="174.0" layoutY="38.0" text="Nombre_tache  :" />
+      <Label fx:id="nbtache" layoutX="269.0" layoutY="38.0" prefHeight="17.0" prefWidth="28.0" textFill="#975bff" />
+      <Label layoutX="174.0" layoutY="59.0" prefHeight="17.0" prefWidth="86.0" text="Nombre_liste    :" />
+      <Label fx:id="nbliste" layoutX="269.0" layoutY="59.0" prefHeight="17.0" prefWidth="28.0" textFill="#975bff" />
+      <Button fx:id="deconnexion" layoutX="420.0" layoutY="77.0" mnemonicParsing="false" onAction="#deconnexion" text="Déconnexion" />
       <Button fx:id="modifierliste" layoutX="41.0" layoutY="65.0" mnemonicParsing="false" onAction="#modifierliste" prefHeight="25.0" prefWidth="97.0" text="Modifier liste" />
       <Button fx:id="supprimerliste" layoutX="42.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimerliste" text="Supprimer liste" />
       <Button fx:id="ajouterliste" layoutX="41.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajouterliste" prefHeight="25.0" prefWidth="97.0" text="Ajouter liste" />
       <TableView fx:id="tabliste" layoutX="23.0" layoutY="176.0" prefHeight="252.0" prefWidth="150.0">
         <columns>
-          <TableColumn fx:id="id_liste" prefWidth="75.0" text="id_liste" />
-          <TableColumn fx:id="nom_liste" prefWidth="75.0" text="Nom_liste" />
+          <TableColumn prefWidth="75.0" text="id_liste" />
+          <TableColumn prefWidth="75.0" text="Nom_liste" />
         </columns>
       </TableView>
-      <TableView fx:id="tabtache" layoutX="207.0" layoutY="176.0" prefHeight="252.0" prefWidth="363.0">
+      <TableView fx:id="tabtache" layoutX="207.0" layoutY="176.0" prefHeight="252.0" prefWidth="511.0">
         <columns>
-          <TableColumn fx:id="id_tache" prefWidth="57.99992370605469" text="id_tâche" />
-          <TableColumn fx:id="nom_tache" prefWidth="72.66664123535156" text="Nom_tâche" />
-            <TableColumn fx:id="description" prefWidth="77.333251953125" text="description" />
-            <TableColumn fx:id="estTerminee" prefWidth="78.6666259765625" text="estTerminée" />
-            <TableColumn fx:id="deadline" prefWidth="75.0" text="deadline" />
+          <TableColumn prefWidth="57.99992370605469" text="id_tâche" />
+          <TableColumn prefWidth="72.66664123535156" text="Nom_tâche" />
+            <TableColumn prefWidth="77.333251953125" text="description" />
+            <TableColumn prefWidth="78.6666259765625" text="estTerminée" />
+            <TableColumn prefWidth="75.0" text="deadline" />
+            <TableColumn prefWidth="75.0" text="ref_liste" />
+            <TableColumn prefWidth="75.0" text="ref_type" />
         </columns>
       </TableView>
-      <TableView fx:id="tabtype" layoutX="602.0" layoutY="176.0" prefHeight="252.0" prefWidth="150.0">
+      <TableView fx:id="tabtype" layoutX="747.0" layoutY="176.0" prefHeight="252.0" prefWidth="150.0">
         <columns>
-          <TableColumn fx:id="id_type" prefWidth="75.0" text="id_type" />
-          <TableColumn fx:id="nom_type" prefWidth="75.0" text="Nom_type" />
+          <TableColumn prefWidth="75.0" text="id_type" />
+          <TableColumn prefWidth="75.0" text="Nom_type" />
         </columns>
       </TableView>
-      <Button fx:id="modifiertype" layoutX="628.0" layoutY="64.0" mnemonicParsing="false" onAction="#modifiertype" prefHeight="25.0" prefWidth="97.0" text="Modifier type" />
-      <Button fx:id="supprimertype" layoutX="628.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimertype" prefHeight="25.0" prefWidth="105.0" text="Supprimer type" />
-      <Button fx:id="ajoutertype" layoutX="628.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertype" prefHeight="25.0" prefWidth="97.0" text="Ajouter type" />
+      <Button fx:id="modifiertype" layoutX="773.0" layoutY="64.0" mnemonicParsing="false" onAction="#modifiertype" prefHeight="25.0" prefWidth="97.0" text="Modifier type" />
+      <Button fx:id="supprimertype" layoutX="769.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimertype" prefHeight="25.0" prefWidth="105.0" text="Supprimer type" />
+      <Button fx:id="ajoutertype" layoutX="773.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertype" prefHeight="25.0" prefWidth="97.0" text="Ajouter type" />
       <Button fx:id="modifiertache" layoutX="216.0" layoutY="138.0" mnemonicParsing="false" onAction="#modifiertache" prefHeight="25.0" prefWidth="97.0" text="Modifier tâche" />
-      <Button fx:id="supprimertache" layoutX="339.0" layoutY="138.0" mnemonicParsing="false" onAction="#supprimertache" prefHeight="25.0" prefWidth="105.0" text="Supprimer tâche" />
-      <Button fx:id="ajoutertache" layoutX="473.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertache" prefHeight="25.0" prefWidth="96.0" text="Ajouter tâche" />
-      <Label layoutX="164.0" layoutY="93.0" text="Nombre_type :" />
-      <Label fx:id="nbtype" layoutX="255.0" layoutY="93.0" text="Label" />
+      <Button fx:id="supprimertache" layoutX="410.0" layoutY="138.0" mnemonicParsing="false" onAction="#supprimertache" prefHeight="25.0" prefWidth="105.0" text="Supprimer tâche" />
+      <Button fx:id="ajoutertache" layoutX="605.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertache" prefHeight="25.0" prefWidth="96.0" text="Ajouter tâche" />
+      <Label layoutX="174.0" layoutY="80.0" text="Nombre_type   :" />
+      <Label fx:id="nbtype" layoutX="269.0" layoutY="80.0" prefHeight="17.0" prefWidth="28.0" textFill="#975bff" />
    </children>
 </AnchorPane>

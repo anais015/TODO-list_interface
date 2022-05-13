@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import modele.Utilisateur;
 
@@ -15,8 +16,7 @@ public class InscriptionController {
 
 
     @FXML
-    private TextField confirmer;
-
+    private PasswordField confirmer;
     @FXML
     private TextField email;
 
@@ -27,7 +27,7 @@ public class InscriptionController {
     private Button inscrire;
 
     @FXML
-    private TextField mdp;
+    private PasswordField mdp;
 
     @FXML
     private TextField nom;

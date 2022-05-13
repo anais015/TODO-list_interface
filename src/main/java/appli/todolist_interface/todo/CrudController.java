@@ -20,32 +20,51 @@ import java.util.ResourceBundle;
 public class CrudController implements Initializable {
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[][] colonnes = {
-                {"id_liste", "id_liste"},
-                {"Nom_liste", "nom"},
+        String[][] liliste = {
+                {"id_liste", "id"},
+                {"Nom_liste", "nom"}
+        };
 
-                {"id_tache", "id_tache"},
+        String[][] tatache = {
+                {"id_tache", "id"},
                 {"Nom_tache", "nom"},
-                {"Description", "Description"},
+                {"description", "description"},
                 {"estTerminee", "estTerminee"},
                 {"deadline", "deadline"},
+                {"ref_liste","ref_liste"},
+                {"ref_type","ref_type"}
+        };
 
-                {"id_type", "id_type"},
+        String[][] tytype = {
+                {"id_type", "id"},
                 {"Nom_type", "nom"}
         };
-        for (int i = 0 ; i < colonnes.length ; i ++){
-            TableColumn<Liste,String> myTable= new TableColumn<>(colonnes[i][0]);
-            myTable.setCellValueFactory(new PropertyValueFactory<Liste,String>(colonnes[i][1]));
+
+        for (int i = 0; i < liliste.length; i++) {
+            TableColumn<Liste, String> myTable = new TableColumn<>(liliste[i][0]);
+            myTable.setCellValueFactory(new PropertyValueFactory<Liste, String>(liliste[i][1]));
             tabliste.getColumns().add(myTable);
-
-            TableColumn<Tache,String> MyTable= new TableColumn<>(colonnes[i][0]);
-            MyTable.setCellValueFactory(new PropertyValueFactory<Tache,String>(colonnes[i][1]));
-            tabtache.getColumns().add(MyTable);
-
-            TableColumn<Type,String> MYTable= new TableColumn<>(colonnes[i][0]);
-            MYTable.setCellValueFactory(new PropertyValueFactory<Type,String>(colonnes[i][1]));
-            tabtype.getColumns().add(MYTable);
         }
+
+        for (int i = 0; i < tatache.length; i++) {
+        TableColumn<Tache, String> MyTable = new TableColumn<>(tatache[i][0]);
+        MyTable.setCellValueFactory(new PropertyValueFactory<Tache, String>(tatache[i][1]));
+        tabtache.getColumns().add(MyTable);
+        }
+
+        for (int i = 0; i < tytype.length; i++) {
+            TableColumn<Type,String> METable= new TableColumn<>(tytype[i][0]);
+            METable.setCellValueFactory(new PropertyValueFactory<Type,String>(tytype[i][1]));
+            tabtype.getColumns().add(METable);
+        }
+
+        Liste liste = new Liste();
+        Tache tache = new Tache();
+        Type type = new Type();
+
+        tabliste.getItems().addAll(liste.afficherListe());
+        tabtache.getItems().addAll(tache.afficherTache());
+        tabtype.getItems().addAll(type.afficherType());
 
     }
 
@@ -60,24 +79,6 @@ public class CrudController implements Initializable {
 
     @FXML
     private Button deconnexion;
-
-    @FXML
-    private TableColumn<?, ?> description;
-
-    @FXML
-    private TableColumn<?, ?> deadline;
-
-    @FXML
-    private TableColumn<?, ?> estTerminee;
-
-    @FXML
-    private TableColumn<?, ?> id_liste;
-
-    @FXML
-    private TableColumn<?, ?> id_tache;
-
-    @FXML
-    private TableColumn<?, ?> id_type;
 
     @FXML
     private Button modifierliste;
@@ -96,15 +97,6 @@ public class CrudController implements Initializable {
 
     @FXML
     private Label nbtype;
-
-    @FXML
-    private TableColumn<?, ?> nom_liste;
-
-    @FXML
-    private TableColumn<?, ?> nom_tache;
-
-    @FXML
-    private TableColumn<?, ?> nom_type;
 
     @FXML
     private Button supprimerliste;
