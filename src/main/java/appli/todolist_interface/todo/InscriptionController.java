@@ -5,18 +5,23 @@ import appli.todolist_interface.todo.CrudController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import modele.Utilisateur;
 
+import java.sql.SQLException;
+
 public class InscriptionController {
 
-    Utilisateur user = new Utilisateur();
 
     @FXML
     private TextField confirmer;
 
     @FXML
     private TextField email;
+
+    @FXML
+    private Label lblerreur;
 
     @FXML
     private Button inscrire;
@@ -34,7 +39,7 @@ public class InscriptionController {
     private Button retour;
 
     @FXML
-    void inscription(ActionEvent event) throws Exception {
+    void inscription(ActionEvent event) throws SQLException {
         if (email.getText().isEmpty() || mdp.getText().isEmpty() || nom.getText().isEmpty()
                 || prenom.getText().isEmpty() || confirmer.getText().isEmpty()){
             System.out.println("Il manque quelque chose ...");
@@ -78,18 +83,24 @@ public class InscriptionController {
                 mdp.setStyle("");
 
             }
-            if (!mdp.getText().equals(confirmer.getText())){
+            if (!confirmer.getText().equals(mdp.getText())){
                 System.out.println("Ce n'est pas le même mot de passe");
             }
         }else{
-            //user.inscription(nom.getText(), prenom.getText(), email.getText(), mdp.getText());
-            mdp.setStyle("");
-            email.setStyle("");
-            nom.setStyle("");
-            prenom.setStyle("");
-            confirmer.setStyle("");
-            System.out.println("OK !");
-            HelloApplication.changeScene("/appli/todolist_interface/crud",new CrudController());//mais pas ça !
+            Utilisateur user = new Utilisateur(email.getText(),mdp.getText(),nom.getText(),prenom.getText());
+            if (confirmer.getText().equals(mdp.getText())){
+                user.inscription();
+                mdp.setStyle("");
+                email.setStyle("");
+                nom.setStyle("");
+                prenom.setStyle("");
+                confirmer.setStyle("");
+                System.out.println("OK !");
+                HelloApplication.changeScene("/appli/todolist_interface/crud", new CrudController());
+
+            }else{
+                lblerreur.setText("les mdp ne correspondent pas");
+            }
         }
     }
 

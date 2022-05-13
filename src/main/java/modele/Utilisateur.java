@@ -17,21 +17,19 @@ public class Utilisateur {
     private String email;
     private String password;
     private boolean estConnecte = false;
-    private connexion_bdd coBdd;
+    private connexion_bdd coBdd = new connexion_bdd();
 
-    public Utilisateur() {
-        coBdd = new connexion_bdd();
+
+    public Utilisateur(String email, String mdp) {
+        setEmail(email);
+        setPassword(mdp);
     }
 
-    public Utilisateur connexion(String email, String password) {
-        this.password = password;
-        this.email = email;
-        return null;
-    }
-
-    public Utilisateur(String nom, String prenom) {
+    public Utilisateur(String email, String mdp, String nom, String prenom) {
         setNom(nom);
         setPrenom(prenom);
+        setEmail(email);
+        setPassword(mdp);
     }
 
     public Utilisateur(int id, String nom, String prenom, String email, String password) {
@@ -95,24 +93,49 @@ public class Utilisateur {
         this.estConnecte = estConnecte;
     }
 
-    public Utilisateur connexion() {
-        Utilisateur user = null;
+    public void inscription() throws SQLException {
+        String sql = "INSERT INTO user ( `nom`, `prenom`, `email`,`password`) VALUES (?,?,?,?)";
+        PreparedStatement req;
+
+        req = coBdd.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        req.setString(1, getNom());
+        req.setString(2, getPrenom());
+        req.setString(3, getEmail());
+        req.setString(4, getPassword());
+        req.executeUpdate();
+        ResultSet res = req.getGeneratedKeys();
+        if(res.next())
+        {
+            int last_inserted_id = res.getInt(1);
+            setId(last_inserted_id);
+        }
+
+    }
+
+    public void connexion() {
         String sql = "SELECT * FROM user WHERE email=? and password=?";
         PreparedStatement req;
         try {
             req = coBdd.getConnection().prepareStatement(sql);
             req.setString(1, getEmail());
             req.setString(2, getPassword());
+            System.out.println(this.getEmail());
+            System.out.println(this.getPassword());
             ResultSet res = req.executeQuery();
             if (res.next()) {
-                user = new Utilisateur(res.getInt("id"), res.getString("nom"), res.getString("prenom"), res.getString("email"), res.getString("mdp"));
+                this.setPrenom(res.getString("prenom"));
+                this.setNom(res.getString("nom"));
+                this.setId(res.getInt("id_user"));
+                System.out.println(this.getEmail());
+                System.out.println(this.getNom());
+                System.out.println(this.getId());
+                System.out.println(this.getPrenom());
             }
-        }   catch(SQLException e){
+        }catch(SQLException e){
     // TODO Auto-generated catch block
                     e.printStackTrace();
-                }
-                return user;
-            }
+        }
+    }
 
 
 }

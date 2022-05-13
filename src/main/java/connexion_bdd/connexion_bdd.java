@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class connexion_bdd {
-    private String url = "jdbc:mysql://localhost:3306/ale_hme_todolist?serverTimezone=UTC";
+    private String url = "jdbc:mysql://localhost:3306/ale_todolist_interface?serverTimezone=UTC";
     private String user = "root";
     private String password = "";
 

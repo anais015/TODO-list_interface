@@ -2,16 +2,24 @@ package appli.todolist_interface.liste;
 
 import appli.todolist_interface.HelloApplication;
 import appli.todolist_interface.todo.CrudController;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import modele.Liste;
+import modele.Utilisateur;
 
-public class ModifierListeController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ModifierListeController implements Initializable {
 
     @FXML
-    private ComboBox<?> id_liste;
+    private ComboBox<Liste> id_liste;
 
     @FXML
     private TextField nom;
@@ -23,11 +31,27 @@ public class ModifierListeController {
     private Button retour;
 
     @FXML
+    void select(ActionEvent event) {
+        String s = id_liste.getSelectionModel().getSelectedItem().toString();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*Utilisateur user = new Utilisateur();
+        ObservableList<Integer> list = FXCollections.observableArrayList(user.getId());
+        id_liste.setItems(list);*/
+        //Select * from Liste
+        id_liste.getItems().add(new Liste(1,"demo"));
+        id_liste.getItems().add(new Liste(2,"test"));
+        id_liste.getValue();
+    }
+
+    @FXML
     void modifier(ActionEvent event) {
         if (nom.getText().isEmpty() || id_liste.getId().isEmpty()) {
             System.out.println("erreur...");
             if (id_liste.getId().isEmpty()) {
-                System.out.println("Il manque l'email...");
+                System.out.println("Il manque l'id de la liste...");
 
                 id_liste.setStyle("-fx-text-box-border: red;");
             } else {
@@ -35,7 +59,7 @@ public class ModifierListeController {
 
             }
             if (nom.getText().isEmpty()) {
-                System.out.println("Il manque l'email...");
+                System.out.println("Il manque le nom...");
 
                 nom.setStyle("-fx-text-box-border: red;");
             } else {
@@ -53,7 +77,7 @@ public class ModifierListeController {
 
     @FXML
     void retour(ActionEvent event) {
-        retour.getScene().getWindow().hide();
+        id_liste.getScene().getWindow().hide();
         HelloApplication.changeScene("/appli/todolist_interface/CrudController");
 
     }

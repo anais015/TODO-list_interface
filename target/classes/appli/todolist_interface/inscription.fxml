@@ -22,9 +22,10 @@
       <Label layoutX="230.0" layoutY="204.0" text="\@todolist.com" />
       <Label layoutX="38.0" layoutY="253.0" prefHeight="17.0" prefWidth="86.0" text="Mot de passe :" />
       <TextField fx:id="mdp" layoutX="131.0" layoutY="249.0" />
-      <Button fx:id="inscrire" layoutX="43.0" layoutY="342.0" mnemonicParsing="false" onAction="#inscription" text="S'inscrire" />
-      <Button fx:id="retour" layoutX="255.0" layoutY="342.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+      <Button fx:id="inscrire" layoutX="22.0" layoutY="354.0" mnemonicParsing="false" onAction="#inscription" text="S'inscrire" />
+      <Button fx:id="retour" layoutX="280.0" layoutY="354.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <TextField fx:id="confirmer" layoutX="131.0" layoutY="295.0" />
       <Label layoutX="14.0" layoutY="299.0" text="Confirmer le mdp  :" />
+      <Label fx:id="lblerreur" layoutX="93.0" layoutY="337.0" prefHeight="43.0" prefWidth="179.0" textFill="RED" />
    </children>
 </AnchorPane>

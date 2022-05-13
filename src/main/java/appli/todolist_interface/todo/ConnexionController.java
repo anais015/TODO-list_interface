@@ -11,7 +11,6 @@ import modele.Utilisateur;
 
 public class ConnexionController {
 
-    Utilisateur user = new Utilisateur();
 
     @FXML
     private Button Connecter;
@@ -52,11 +51,9 @@ public class ConnexionController {
 
             }
         }else{
-            System.out.println(email.getText());
-            System.out.println(mdp.getText());
-            Utilisateur user = new Utilisateur();//ça bloque à partir de là
-            Utilisateur u = user.connexion();
-            if(u.getId() > 0){
+            Utilisateur user = new Utilisateur(email.getText(),mdp.getText());
+            user.connexion();
+            if(user.getId() > 0){
             mdp.setStyle("");
             email.setStyle("");
             System.out.println("OK !");
