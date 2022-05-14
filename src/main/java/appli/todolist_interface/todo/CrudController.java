@@ -1,7 +1,9 @@
 package appli.todolist_interface.todo;
 
 import appli.todolist_interface.HelloApplication;
+import appli.todolist_interface.liste.AjouterListeController;
 import appli.todolist_interface.liste.ModifierListeController;
+import appli.todolist_interface.liste.SupprimerListeController;
 import appli.todolist_interface.tache.AjouterTacheController;
 import appli.todolist_interface.tache.ModifierTacheController;
 import appli.todolist_interface.tache.SupprimerTacheController;
@@ -118,7 +120,7 @@ public class CrudController implements Initializable {
 
     @FXML
     void ajouterliste(ActionEvent event) {
-
+        HelloApplication.changeScene("/appli/todolist_interface/ajouterliste", new AjouterListeController());
     }
 
     @FXML
@@ -148,7 +150,7 @@ public class CrudController implements Initializable {
 
     @FXML
     void supprimerliste(ActionEvent event) {
-
+        HelloApplication.changeScene("/appli/todolist_interface/supprimerliste", new SupprimerListeController());
     }
 
     @FXML

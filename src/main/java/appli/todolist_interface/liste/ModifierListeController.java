@@ -22,6 +22,9 @@ public class ModifierListeController implements Initializable {
     private ComboBox<Liste> id_liste;
 
     @FXML
+    private TextField id;
+
+    @FXML
     private TextField nom;
 
     @FXML
@@ -32,7 +35,9 @@ public class ModifierListeController implements Initializable {
 
     @FXML
     void select(ActionEvent event) {
+        Liste ll = new Liste();
         String s = id_liste.getSelectionModel().getSelectedItem().toString();
+        id.setText(String.valueOf(id_liste.getValue()));
         nom.setText(String.valueOf(id_liste.getValue()));
     }
 
@@ -40,19 +45,19 @@ public class ModifierListeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Liste l = new Liste();
         id_liste.getItems().addAll(FXCollections.observableArrayList(l.afficherListe()));
-//
+
     }
 
     @FXML
     void modifier(ActionEvent event) throws SQLException {
-        if (nom.getText().isEmpty() || id_liste.getId().isBlank()) {
+        if (nom.getText().isEmpty() || id.getText().isEmpty()) {
             System.out.println("erreur...");
-            if (id_liste.getId().isBlank()) {
+            if (id.getText().isEmpty()) {
                 System.out.println("Il manque l'id de la liste...");
 
-                id_liste.setStyle("-fx-text-box-border: red;");
+                id.setStyle("-fx-text-box-border: red;");
             } else {
-                id_liste.setStyle("");
+                id.setStyle("");
 
             }
             if (nom.getText().isEmpty()) {
@@ -64,12 +69,13 @@ public class ModifierListeController implements Initializable {
 
             }
         }else{
-        Liste liste = new Liste(nom.getText());
+        Liste liste = new Liste(nom.getText(), Integer.parseInt(id.getText())); //converti un texte en chiffre
         liste.modifierListe();
-        id_liste.setStyle("");
+        id.setStyle("");
         nom.setStyle("");
         System.out.println("Changement effectué");
-        HelloApplication.changeScene("/appli/todolist_interface/crud", new CrudController());//ça fonctionne !
+        nom.getScene().getWindow().hide();
+        HelloApplication.changeScene("/appli/todolist_interface/crud", new CrudController());
         }
     }
 

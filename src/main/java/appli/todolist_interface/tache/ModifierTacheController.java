@@ -3,10 +3,12 @@ package appli.todolist_interface.tache;
 import appli.todolist_interface.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.util.StringConverter;
+import javafx.util.converter.FormatStringConverter;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class ModifierTacheController {
 
@@ -20,7 +22,7 @@ public class ModifierTacheController {
     private ComboBox<?> choix_type;
 
     @FXML
-    private TextField deadline;
+    private DatePicker deadline;
 
     @FXML
     private ComboBox<?> estTerminee;
@@ -39,7 +41,28 @@ public class ModifierTacheController {
 
     @FXML
     void modifier(ActionEvent event) {
+        String pattern = "yyyy-MM-dd"; // pour modifier le format de la date
+        deadline.setPromptText(pattern.toLowerCase());
+        deadline.setConverter(new StringConverter<LocalDate>() {
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
+            @Override
+            public String toString(LocalDate localDate) {
+                if (localDate != null) {
+                    return dateFormatter.format(localDate);
+                } else {
+                    return "";
+                }
+            }
 
+            @Override
+            public LocalDate fromString(String s) {
+                if (s != null && !s.isEmpty()) {
+                    return LocalDate.parse(s, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        });
     }
 
     @FXML

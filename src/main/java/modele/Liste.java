@@ -17,12 +17,21 @@ public class Liste {
         this.nom = nom;
     }
 
-    public Liste(String nom){
+    public Liste(String nom, int id){
         setNom(nom);
+        setId(id);
     }
 
     public Liste() {
 
+    }
+
+    public Liste(int id) {
+        setId(id);
+    }
+
+    public Liste(String nom){
+        setNom(nom);
     }
 
     public int getId() {
@@ -61,21 +70,46 @@ public class Liste {
         return listes;
     }
 
+    public void ajouterListe(){
+        String sql;
+        PreparedStatement req;
+        sql = "INSERT INTO `liste`(`nom`) VALUES (?)";
+        try {
+            req = coBdd.getConnection().prepareStatement(sql);
+            req.setString(1, this.getNom());
+            req.executeUpdate();
+        }catch (SQLException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
     public void modifierListe() throws SQLException {
         String sql;
         PreparedStatement req;
         sql = "UPDATE liste SET `nom`=? WHERE id_liste=?";
-        req = coBdd.getConnection().prepareStatement(sql);
-        req.setString(1, this.getNom());
-        req.setInt(2, this.getId());
-        req.executeUpdate();
+        try {
+            req = coBdd.getConnection().prepareStatement(sql);
+            req.setString(1, this.getNom());
+            req.setInt(2, this.getId());
+            req.executeUpdate();
+        }catch (SQLException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    public void supprimerListe() throws SQLException {
+        if (getId() > 0){
+            String sql = "DELETE FROM liste where id_liste=?;";
+            PreparedStatement pstm = coBdd.getConnection().prepareStatement(sql);
+            pstm.setInt(1, this.getId());
+            pstm.executeUpdate();
+        }
     }
 
     @Override
     public String toString() {
-        return "Liste{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                '}';
+        return id +" - "+ nom;
     }
 }

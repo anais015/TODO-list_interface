@@ -7,18 +7,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="294.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="345.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="218.0" layoutY="31.0" text="Modifier la liste">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="retour" layoutX="498.0" layoutY="230.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
-      <Button fx:id="modifier" layoutX="53.0" layoutY="230.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
-      <ComboBox fx:id="id_liste" layoutX="300.0" layoutY="104.0" onAction="#select" prefHeight="25.0" prefWidth="224.0" promptText="id de la liste" />
-      <TextField fx:id="nom" layoutX="300.0" layoutY="162.0" prefHeight="25.0" prefWidth="224.0" />
+      <Button fx:id="retour" layoutX="498.0" layoutY="283.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+      <Button fx:id="modifier" layoutX="43.0" layoutY="283.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
+      <ComboBox fx:id="id_liste" layoutX="300.0" layoutY="104.0" onAction="#select" prefHeight="25.0" prefWidth="239.0" promptText="id de la liste avec le nom de la liste" />
+      <TextField fx:id="id" layoutX="300.0" layoutY="162.0" prefHeight="25.0" prefWidth="239.0" />
       <Label layoutX="28.0" layoutY="108.0" text="Choisissez l'id de la liste à modifier :" />
-      <Label layoutX="136.0" layoutY="166.0" text="Nouveau nom :" />
+      <Label layoutX="136.0" layoutY="221.0" text="Nouveau nom :" />
+      <TextField fx:id="nom" layoutX="300.0" layoutY="217.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="134.0" layoutY="166.0" prefHeight="17.0" prefWidth="81.0" text="id de la liste    :" />
    </children>
 </AnchorPane>
