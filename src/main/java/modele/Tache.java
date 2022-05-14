@@ -22,6 +22,10 @@ public class Tache {
 
     }
 
+    public Tache(int id){
+        setId(id);
+    }
+
     public Tache(int id, String nom, String description, Date deadline, int ref_liste, int ref_type, boolean estTerminee) {
         this.id = id;
         this.nom = nom;
@@ -120,5 +124,19 @@ public class Tache {
         }
 
         return taches;
+    }
+
+    public void supprimerTache() throws SQLException {
+        if (getId() > 0){
+            String sql = "DELETE FROM tache where id_tache=?;";
+            PreparedStatement pstm = coBdd.getConnection().prepareStatement(sql);
+            pstm.setInt(1, this.getId());
+            pstm.executeUpdate();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return id +" - "+ nom;
     }
 }
