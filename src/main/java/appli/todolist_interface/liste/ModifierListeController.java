@@ -3,7 +3,6 @@ package appli.todolist_interface.liste;
 import appli.todolist_interface.HelloApplication;
 import appli.todolist_interface.todo.CrudController;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -45,7 +44,6 @@ public class ModifierListeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Liste l = new Liste();
         id_liste.getItems().addAll(FXCollections.observableArrayList(l.afficherListe()));
-
     }
 
     @FXML

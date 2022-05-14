@@ -7,6 +7,9 @@ import appli.todolist_interface.liste.SupprimerListeController;
 import appli.todolist_interface.tache.AjouterTacheController;
 import appli.todolist_interface.tache.ModifierTacheController;
 import appli.todolist_interface.tache.SupprimerTacheController;
+import appli.todolist_interface.type.AjouterTypeController;
+import appli.todolist_interface.type.ModifierTypeController;
+import appli.todolist_interface.type.SupprimerTypeController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -130,7 +133,7 @@ public class CrudController implements Initializable {
 
     @FXML
     void ajoutertype(ActionEvent event) {
-
+        HelloApplication.changeScene("/appli/todolist_interface/ajoutertype", new AjouterTypeController());
     }
 
     @FXML
@@ -145,7 +148,7 @@ public class CrudController implements Initializable {
 
     @FXML
     void modifiertype(ActionEvent event) {
-
+        HelloApplication.changeScene("/appli/todolist_interface/modifiertype", new ModifierTypeController());
     }
 
     @FXML
@@ -160,7 +163,7 @@ public class CrudController implements Initializable {
 
     @FXML
     void supprimertype(ActionEvent event) {
-
+        HelloApplication.changeScene("/appli/todolist_interface/supprimertype", new SupprimerTypeController());
     }
     @FXML
     void deconnexion(ActionEvent event) {

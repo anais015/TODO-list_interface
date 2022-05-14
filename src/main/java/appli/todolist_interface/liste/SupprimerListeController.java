@@ -46,7 +46,7 @@ public class SupprimerListeController implements Initializable {
     @FXML
     void retour(ActionEvent event) {
         retour.getScene().getWindow().hide();
-        HelloApplication.changeScene("/appli/todolist_interface/hello-view");
+        HelloApplication.changeScene("/appli/todolist_interface/crud", new CrudController());
     }
 
     @FXML
