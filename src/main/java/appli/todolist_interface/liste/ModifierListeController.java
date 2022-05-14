@@ -11,9 +11,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import modele.Liste;
-import modele.Utilisateur;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ModifierListeController implements Initializable {
@@ -33,19 +33,18 @@ public class ModifierListeController implements Initializable {
     @FXML
     void select(ActionEvent event) {
         String s = id_liste.getSelectionModel().getSelectedItem().toString();
+        nom.setText(String.valueOf(id_liste.getValue()));
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Liste l = new Liste();
         id_liste.getItems().addAll(FXCollections.observableArrayList(l.afficherListe()));
-//        id_liste.getItems().add(new Liste(1,"demo"));
-//        id_liste.getItems().add(new Liste(2,"test"));
-//        id_liste.getValue();
+//
     }
 
     @FXML
-    void modifier(ActionEvent event) {
+    void modifier(ActionEvent event) throws SQLException {
         if (nom.getText().isEmpty() || id_liste.getId().isBlank()) {
             System.out.println("erreur...");
             if (id_liste.getId().isBlank()) {
@@ -65,18 +64,19 @@ public class ModifierListeController implements Initializable {
 
             }
         }else{
-        //user.connexionUser(email.getText(), mdp.getText());
+        Liste liste = new Liste(nom.getText());
+        liste.modifierListe();
         id_liste.setStyle("");
         nom.setStyle("");
-        System.out.println("Changement effectué");// ça fonctionne :-)
+        System.out.println("Changement effectué");
         HelloApplication.changeScene("/appli/todolist_interface/crud", new CrudController());//ça fonctionne !
         }
     }
 
     @FXML
     void retour(ActionEvent event) {
-        id_liste.getScene().getWindow().hide();
-        HelloApplication.changeScene("/appli/todolist_interface/CrudController");
+        nom.getScene().getWindow().hide();
+        HelloApplication.changeScene("/appli/todolist_interface/crud", new CrudController());
 
     }
 }

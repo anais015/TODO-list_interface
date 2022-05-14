@@ -17,6 +17,10 @@ public class Liste {
         this.nom = nom;
     }
 
+    public Liste(String nom){
+        setNom(nom);
+    }
+
     public Liste() {
 
     }
@@ -55,6 +59,16 @@ public class Liste {
         }
 
         return listes;
+    }
+
+    public void modifierListe() throws SQLException {
+        String sql;
+        PreparedStatement req;
+        sql = "UPDATE liste SET `nom`=? WHERE id_liste=?";
+        req = coBdd.getConnection().prepareStatement(sql);
+        req.setString(1, this.getNom());
+        req.setInt(2, this.getId());
+        req.executeUpdate();
     }
 
     @Override

@@ -26,10 +26,10 @@ public class CrudController implements Initializable {
         };
 
         String[][] tatache = {
-                {"id_tache", "id"},
-                {"Nom_tache", "nom"},
+                {"id_tâche", "id"},
+                {"Nom_tâche", "nom"},
                 {"description", "description"},
-                {"estTerminee", "estTerminee"},
+                {"estTerminée", "estTerminee"},
                 {"deadline", "deadline"},
                 {"ref_liste","ref_liste"},
                 {"ref_type","ref_type"}

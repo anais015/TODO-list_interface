@@ -22,7 +22,7 @@
       <Button fx:id="modifierliste" layoutX="41.0" layoutY="65.0" mnemonicParsing="false" onAction="#modifierliste" prefHeight="25.0" prefWidth="97.0" text="Modifier liste" />
       <Button fx:id="supprimerliste" layoutX="42.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimerliste" text="Supprimer liste" />
       <Button fx:id="ajouterliste" layoutX="41.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajouterliste" prefHeight="25.0" prefWidth="97.0" text="Ajouter liste" />
-      <TableView fx:id="tabliste" layoutX="23.0" layoutY="176.0" prefHeight="252.0" prefWidth="150.0">
+      <TableView fx:id="tabliste" layoutX="23.0" layoutY="176.0" prefHeight="252.0" prefWidth="168.0">
         <columns>
           <TableColumn prefWidth="75.0" text="id_liste" />
           <TableColumn prefWidth="75.0" text="Nom_liste" />
@@ -39,7 +39,7 @@
             <TableColumn prefWidth="75.0" text="ref_type" />
         </columns>
       </TableView>
-      <TableView fx:id="tabtype" layoutX="747.0" layoutY="176.0" prefHeight="252.0" prefWidth="150.0">
+      <TableView fx:id="tabtype" layoutX="747.0" layoutY="176.0" prefHeight="252.0" prefWidth="161.0">
         <columns>
           <TableColumn prefWidth="75.0" text="id_type" />
           <TableColumn prefWidth="75.0" text="Nom_type" />

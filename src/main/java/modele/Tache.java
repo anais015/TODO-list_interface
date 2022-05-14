@@ -13,7 +13,7 @@ public class Tache {
     String nom;
     String description;
     Date deadline;
-    Boolean estTerminee;
+    boolean estTerminee=false;
     int ref_liste;
     int ref_type;
     private connexion_bdd coBdd = new connexion_bdd();
@@ -30,6 +30,15 @@ public class Tache {
         this.estTerminee=false;
         this.ref_liste = ref_liste;
         this.ref_type = ref_type;
+    }
+
+    public Tache (String nom, String description, Date deadline, boolean estTerminee, int ref_type, int ref_liste){
+        setNom(nom);
+        setDescription(description);
+        setDeadline(deadline);
+        setEstTerminee(estTerminee);
+        setRef_liste(ref_liste);
+        setRef_type(ref_type);
     }
 
     public int getId() {
@@ -64,11 +73,11 @@ public class Tache {
         this.deadline = deadline;
     }
 
-    public Boolean getEstTerminee() {
+    public boolean getEstTerminee() {
         return estTerminee;
     }
 
-    public void setEstTerminee(Boolean estTerminee) {
+    public void setEstTerminee(boolean estTerminee) {
         this.estTerminee = estTerminee;
     }
 
@@ -98,10 +107,11 @@ public class Tache {
             ResultSet res = req.executeQuery();
             while (res.next()){
                 tache = new Tache (res.getInt("id_tache"),res.getString("nom"),
-                        res.getString("description"),res.getDate("deadline"),
+                        res.getString("description"),
+                        res.getDate("deadline"),
                         res.getInt("ref_liste"),
                         res.getInt("ref_type"),
-                        res.getBoolean("estTerminée"));
+                        res.getBoolean("estTerminee"));
                 taches.add(tache);
             }
         }catch (SQLException e) {
