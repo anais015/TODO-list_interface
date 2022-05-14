@@ -36,7 +36,8 @@ public class Tache {
         this.ref_type = ref_type;
     }
 
-    public Tache (String nom, String description, Date deadline, boolean estTerminee, int ref_type, int ref_liste){
+    public Tache (int id, String nom, String description, Date deadline, boolean estTerminee, int ref_type, int ref_liste){
+        setId(id);
         setNom(nom);
         setDescription(description);
         setDeadline(deadline);
@@ -132,6 +133,27 @@ public class Tache {
             PreparedStatement pstm = coBdd.getConnection().prepareStatement(sql);
             pstm.setInt(1, this.getId());
             pstm.executeUpdate();
+        }
+    }
+
+    public void modifierTache() throws SQLException {
+        String sql;
+        PreparedStatement req;
+        sql = "UPDATE tache SET `nom`=?, `description`=?, `deadline`=?, " +
+                "`estTerminee`=?, `ref_liste`=?, `ref_type`=? WHERE id_liste=?";
+        try {
+            req = coBdd.getConnection().prepareStatement(sql);
+            req.setString(1, this.getNom());
+            req.setString(2, this.getDescription());
+            req.setDate(3, (java.sql.Date) this.getDeadline());
+            req.setBoolean(4, this.getEstTerminee());
+            req.setInt(5, this.getRef_liste());
+            req.setInt(6, this.getRef_type());
+            req.setInt(7, this.getId());
+            req.executeUpdate();
+        }catch (SQLException e) {
+// TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 
