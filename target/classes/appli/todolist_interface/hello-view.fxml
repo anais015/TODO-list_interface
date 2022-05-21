@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.todolist_interface.todo.ConnexionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="425.0" styleClass="connexion" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.todolist_interface.todo.ConnexionController">
    <children>
-      <Label layoutX="153.0" layoutY="39.0" prefHeight="17.0" prefWidth="120.0" text="TODO-list">
+      <Label layoutX="153.0" layoutY="39.0" prefHeight="17.0" prefWidth="120.0" text="TODO-list" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -18,8 +18,8 @@
       <Button fx:id="Connecter" layoutX="40.0" layoutY="287.0" mnemonicParsing="false" onAction="#Connexion" text="Se connecter" />
       <Button fx:id="Quitter" layoutX="301.0" layoutY="287.0" mnemonicParsing="false" onAction="#Quitter" text="Quitter" />
       <Button fx:id="Inscrire" layoutX="181.0" layoutY="287.0" mnemonicParsing="false" onAction="#Inscription" text="S'inscrire" />
-      <Label layoutX="194.0" layoutY="111.0" text="Email :" />
-      <Label layoutX="173.0" layoutY="187.0" text="Mot de passe :" />
+      <Label layoutX="194.0" layoutY="111.0" text="Email :" textFill="WHITE" />
+      <Label layoutX="173.0" layoutY="187.0" text="Mot de passe :" textFill="WHITE" />
       <PasswordField fx:id="mdp" layoutX="137.0" layoutY="214.0" />
       <Label fx:id="lblerreur" layoutX="195.0" layoutY="255.0" prefHeight="17.0" prefWidth="35.0" textFill="RED" />
    </children>

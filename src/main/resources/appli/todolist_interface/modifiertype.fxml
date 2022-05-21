@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="303.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="303.0" prefWidth="600.0" styleClass="modifier" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="226.0" layoutY="44.0" text="Modifier Type">
+      <Label layoutX="226.0" layoutY="44.0" text="Modifier Type" textFill="#00ceff">
          <font>
             <Font size="24.0" />
          </font>
@@ -19,8 +19,8 @@
       <TextField fx:id="nom" layoutX="226.0" layoutY="214.0" prefHeight="25.0" prefWidth="205.0" />
       <Button fx:id="modifier" layoutX="46.0" layoutY="251.0" mnemonicParsing="false" onAction="#modifier" text="modifier" />
       <Button fx:id="retour" layoutX="515.0" layoutY="251.0" mnemonicParsing="false" onAction="#retour" text="retour" />
-      <Label layoutX="54.0" layoutY="114.0" text="Sélectionner l'id du type :" />
-      <Label layoutX="172.0" layoutY="168.0" text="id :" />
-      <Label layoutX="106.0" layoutY="218.0" text="Nouveau nom :" />
+      <Label layoutX="54.0" layoutY="114.0" text="Sélectionner l'id du type :" textFill="#00ceff" />
+      <Label layoutX="172.0" layoutY="168.0" text="id :" textFill="#00ceff" />
+      <Label layoutX="106.0" layoutY="218.0" text="Nouveau nom :" textFill="#00ceff" />
    </children>
 </AnchorPane>

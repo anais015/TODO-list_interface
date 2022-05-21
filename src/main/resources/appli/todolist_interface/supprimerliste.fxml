@@ -7,18 +7,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="269.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="269.0" prefWidth="600.0" styleClass="supprimer" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="197.0" layoutY="30.0" text="Supprimer une liste">
+      <Label layoutX="197.0" layoutY="30.0" text="Supprimer une liste" textFill="RED">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="198.0" layoutY="80.0" text="Sélectionner l'id de la liste à supprimer" />
+      <Label layoutX="198.0" layoutY="80.0" text="Sélectionner l'id de la liste à supprimer" textFill="RED" />
       <Button fx:id="supprimer" layoutX="88.0" layoutY="197.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer" />
       <Button fx:id="retour" layoutX="468.0" layoutY="197.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <ComboBox fx:id="id" layoutX="225.0" layoutY="122.0" onAction="#select" prefWidth="150.0" promptText="id des listes" />
       <TextField fx:id="id_liste" layoutX="226.0" layoutY="172.0" />
-      <Label layoutX="108.0" layoutY="97.0" text="(Vous devez supprimer le nom de la liste quand vous aurez sélectionner)" />
+      <Label layoutX="108.0" layoutY="97.0" text="(Vous devez supprimer le nom de la liste quand vous aurez sélectionner)" textFill="RED" />
    </children>
 </AnchorPane>

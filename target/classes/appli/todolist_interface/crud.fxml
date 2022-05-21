@@ -7,28 +7,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="452.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="451.0" prefWidth="1038.0" styleClass="crud" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="408.0" layoutY="29.0" text="TODO-list">
+      <Label layoutX="478.0" layoutY="29.0" text="TODO-list" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="174.0" layoutY="38.0" text="Nombre_tache  :" />
-      <Label fx:id="nbtache" layoutX="269.0" layoutY="38.0" prefHeight="17.0" prefWidth="28.0" textFill="#975bff" />
-      <Label layoutX="174.0" layoutY="59.0" prefHeight="17.0" prefWidth="86.0" text="Nombre_liste    :" />
-      <Label fx:id="nbliste" layoutX="269.0" layoutY="59.0" prefHeight="17.0" prefWidth="28.0" textFill="#975bff" />
-      <Button fx:id="deconnexion" layoutX="420.0" layoutY="77.0" mnemonicParsing="false" onAction="#deconnexion" text="Déconnexion" />
-      <Button fx:id="modifierliste" layoutX="41.0" layoutY="65.0" mnemonicParsing="false" onAction="#modifierliste" prefHeight="25.0" prefWidth="97.0" text="Modifier liste" />
-      <Button fx:id="supprimerliste" layoutX="42.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimerliste" text="Supprimer liste" />
-      <Button fx:id="ajouterliste" layoutX="41.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajouterliste" prefHeight="25.0" prefWidth="97.0" text="Ajouter liste" />
+      <Label layoutX="281.0" layoutY="38.0" text="Nombre_tache  :" textFill="WHITE" />
+      <Label fx:id="nbtache" layoutX="378.0" layoutY="38.0" prefHeight="17.0" prefWidth="28.0" textFill="WHITE" />
+      <Label layoutX="282.0" layoutY="59.0" prefHeight="17.0" prefWidth="86.0" text="Nombre_liste    :" textFill="WHITE" />
+      <Label fx:id="nbliste" layoutX="378.0" layoutY="59.0" prefHeight="17.0" prefWidth="28.0" textFill="#fdfdfd" />
+      <Button fx:id="deconnexion" layoutX="486.0" layoutY="79.0" mnemonicParsing="false" onAction="#deconnexion" text="Déconnexion" />
+      <Button fx:id="modifierliste" layoutX="58.0" layoutY="65.0" mnemonicParsing="false" onAction="#modifierliste" prefHeight="25.0" prefWidth="97.0" text="Modifier liste" />
+      <Button fx:id="supprimerliste" layoutX="57.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimerliste" text="Supprimer liste" />
+      <Button fx:id="ajouterliste" layoutX="58.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajouterliste" prefHeight="25.0" prefWidth="97.0" text="Ajouter liste" />
       <TableView fx:id="tabliste" layoutX="23.0" layoutY="176.0" prefHeight="252.0" prefWidth="168.0">
         <columns>
           <TableColumn prefWidth="75.0" text="id_liste" />
           <TableColumn prefWidth="75.0" text="Nom_liste" />
         </columns>
       </TableView>
-      <TableView fx:id="tabtache" layoutX="207.0" layoutY="176.0" prefHeight="252.0" prefWidth="511.0">
+      <TableView fx:id="tabtache" layoutX="207.0" layoutY="176.0" prefHeight="252.0" prefWidth="627.0">
         <columns>
           <TableColumn prefWidth="57.99992370605469" text="id_tâche" />
           <TableColumn prefWidth="72.66664123535156" text="Nom_tâche" />
@@ -39,19 +39,19 @@
             <TableColumn prefWidth="75.0" text="ref_type" />
         </columns>
       </TableView>
-      <TableView fx:id="tabtype" layoutX="747.0" layoutY="176.0" prefHeight="252.0" prefWidth="161.0">
+      <TableView fx:id="tabtype" layoutX="851.0" layoutY="176.0" prefHeight="252.0" prefWidth="161.0">
         <columns>
           <TableColumn prefWidth="75.0" text="id_type" />
           <TableColumn prefWidth="75.0" text="Nom_type" />
         </columns>
       </TableView>
-      <Button fx:id="modifiertype" layoutX="773.0" layoutY="64.0" mnemonicParsing="false" onAction="#modifiertype" prefHeight="25.0" prefWidth="97.0" text="Modifier type" />
-      <Button fx:id="supprimertype" layoutX="769.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimertype" prefHeight="25.0" prefWidth="105.0" text="Supprimer type" />
-      <Button fx:id="ajoutertype" layoutX="773.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertype" prefHeight="25.0" prefWidth="97.0" text="Ajouter type" />
+      <Button fx:id="modifiertype" layoutX="883.0" layoutY="65.0" mnemonicParsing="false" onAction="#modifiertype" prefHeight="25.0" prefWidth="97.0" text="Modifier type" />
+      <Button fx:id="supprimertype" layoutX="879.0" layoutY="102.0" mnemonicParsing="false" onAction="#supprimertype" prefHeight="25.0" prefWidth="105.0" text="Supprimer type" />
+      <Button fx:id="ajoutertype" layoutX="883.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertype" prefHeight="25.0" prefWidth="97.0" text="Ajouter type" />
       <Button fx:id="modifiertache" layoutX="216.0" layoutY="138.0" mnemonicParsing="false" onAction="#modifiertache" prefHeight="25.0" prefWidth="97.0" text="Modifier tâche" />
-      <Button fx:id="supprimertache" layoutX="410.0" layoutY="138.0" mnemonicParsing="false" onAction="#supprimertache" prefHeight="25.0" prefWidth="105.0" text="Supprimer tâche" />
-      <Button fx:id="ajoutertache" layoutX="605.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertache" prefHeight="25.0" prefWidth="96.0" text="Ajouter tâche" />
-      <Label layoutX="174.0" layoutY="80.0" text="Nombre_type   :" />
-      <Label fx:id="nbtype" layoutX="269.0" layoutY="80.0" prefHeight="17.0" prefWidth="28.0" textFill="#975bff" />
+      <Button fx:id="supprimertache" layoutX="468.0" layoutY="138.0" mnemonicParsing="false" onAction="#supprimertache" prefHeight="29.0" prefWidth="125.0" text="Supprimer tâche" />
+      <Button fx:id="ajoutertache" layoutX="729.0" layoutY="138.0" mnemonicParsing="false" onAction="#ajoutertache" prefHeight="25.0" prefWidth="96.0" text="Ajouter tâche" />
+      <Label layoutX="283.0" layoutY="80.0" text="Nombre_type   :" textFill="WHITE" />
+      <Label fx:id="nbtype" layoutX="378.0" layoutY="80.0" prefHeight="17.0" prefWidth="28.0" textFill="WHITE" />
    </children>
 </AnchorPane>

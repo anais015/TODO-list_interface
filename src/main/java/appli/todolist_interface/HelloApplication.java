@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.media.Media;
@@ -28,16 +29,11 @@ public class HelloApplication extends Application {
        // mediaPlayer.play();
 
         fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/appli/todolist_interface/intro.fxml"));
-        //Parent root = ;
         Scene scene = new Scene(fxmlLoader.load());
 
         stage.setTitle("TODO-list");
 
-        //Parent root = fxmlLoader.load();
-        //Scene scene = new Scene(root);
-
-        //String css = this.getClass().getResource("image.css").toExternalForm();
-        //scene.getStylesheets().add(css);
+        //stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("/resource/img/bloc-notes.webp"))));
 
         stage.setScene(scene);
         stage.show();

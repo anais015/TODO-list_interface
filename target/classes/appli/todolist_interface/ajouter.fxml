@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="450.0" styleClass="ajouter" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="134.0" layoutY="38.0" text="Ajouter une tâche">
+      <Label layoutX="134.0" layoutY="38.0" text="Ajouter une tâche" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -20,14 +19,14 @@
       <TextArea fx:id="description" layoutX="154.0" layoutY="280.0" prefHeight="49.0" prefWidth="211.0" />
       <TextField fx:id="date" layoutX="154.0" layoutY="146.0" />
       <ComboBox fx:id="choix_type" layoutX="154.0" layoutY="191.0" onAction="#choix_type" prefWidth="150.0" />
-      <Label layoutX="77.0" layoutY="103.0" text="Nom :" />
-      <Label layoutX="78.0" layoutY="150.0" text="Date :" />
-      <Label layoutX="78.0" layoutY="195.0" text="Type :" />
-      <Label layoutX="45.0" layoutY="296.0" text="Description :" />
+      <Label layoutX="77.0" layoutY="103.0" text="Nom :" textFill="WHITE" />
+      <Label layoutX="78.0" layoutY="150.0" text="Date :" textFill="WHITE" />
+      <Label layoutX="78.0" layoutY="195.0" text="Type :" textFill="WHITE" />
+      <Label layoutX="45.0" layoutY="296.0" text="Description :" textFill="WHITE" />
       <Button fx:id="ajouter" layoutX="45.0" layoutY="345.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
       <Button fx:id="retour" layoutX="303.0" layoutY="345.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <ComboBox fx:id="choix_liste" layoutX="154.0" layoutY="234.0" onAction="#choix_liste" prefWidth="150.0" />
-      <Label layoutX="80.0" layoutY="238.0" text="Liste :" />
+      <Label layoutX="80.0" layoutY="238.0" text="Liste :" textFill="WHITE" />
       <Label layoutX="319.0" layoutY="150.0" text="Format : AAAA-MM-JJ" textFill="RED" />
    </children>
 </AnchorPane>

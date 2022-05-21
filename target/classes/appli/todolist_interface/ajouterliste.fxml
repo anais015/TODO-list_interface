@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="262.0" prefWidth="481.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="262.0" prefWidth="481.0" styleClass="ajouter" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="168.0" layoutY="39.0" text="Ajouter une liste">
+      <Label layoutX="168.0" layoutY="39.0" text="Ajouter une liste" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="62.0" layoutY="131.0" text="Nom de la liste :" />
+      <Label layoutX="62.0" layoutY="131.0" text="Nom de la liste :" textFill="WHITE" />
       <Button fx:id="ajouter" layoutX="93.0" layoutY="199.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
       <Button fx:id="retour" layoutX="342.0" layoutY="199.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <TextField fx:id="nom" layoutX="168.0" layoutY="127.0" prefHeight="25.0" prefWidth="173.0" />

@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="251.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="251.0" prefWidth="600.0" styleClass="supprimer" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="216.0" layoutY="33.0" text="Supprimer Type">
+      <Label layoutX="216.0" layoutY="33.0" text="Supprimer Type" textFill="RED">
          <font>
             <Font size="24.0" />
          </font>
@@ -18,7 +18,7 @@
       <Button fx:id="supprimer" layoutX="96.0" layoutY="200.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer" />
       <Button fx:id="retour" layoutX="451.0" layoutY="200.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
       <TextField fx:id="id" layoutX="257.0" layoutY="153.0" prefHeight="25.0" prefWidth="179.0" />
-      <Label layoutX="14.0" layoutY="116.0" text="Sélectionner l'id de la tâche a supprimé :" />
-      <Label layoutX="208.0" layoutY="157.0" text="id  :" />
+      <Label layoutX="14.0" layoutY="116.0" text="Sélectionner l'id de la tâche a supprimé :" textFill="RED" />
+      <Label layoutX="208.0" layoutY="157.0" text="id  :" textFill="RED" />
    </children>
 </AnchorPane>

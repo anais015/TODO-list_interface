@@ -1,0 +1,109 @@
+/*#stack-pane{
+    -fx-background-image: url("../../../../../assets/img/bg.gif");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}*/
+
+/*.root{
+    -fx-background-color: #2758f5;
+}*/
+
+.button {
+    -fx-border-width: 2;
+    -fx-border-color: #FFE4C4;
+    -fx-background-color: #FFDAB9;
+    cursor: pointer; // seems like Cursor.HAND
+}
+
+.button:hover {
+    -fx-background-color: #FFC125;
+}
+
+.button:pressed {
+    -fx-background-color: #FFDAB9;
+}
+
+.intro{
+    -fx-background-image: url("../img/Feuillets-autocollants--Post-it-.jpg");
+}
+
+.connexion{
+    -fx-background-image: url("../img/bg.gif");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    /*-fx-background-size: 700 700;*/
+}
+
+.inscription{
+    -fx-background-image: url("../img/original.gif");
+    -fx-background-position: center center;
+}
+
+.crud{
+    -fx-background-image: url("../img/aes.gif");
+    -fx-background-position: center center;
+}
+
+.ajouter{
+    -fx-background-image: url("../img/ajouter.gif");
+    -fx-background-position: center center;
+}
+
+.modifier{
+    -fx-background-image: url("../img/update.gif");
+    -fx-background-position: center center;
+}
+
+.supprimer{
+    -fx-background-image: url("../img/poubelle.gif");
+    -fx-background-position: center center;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background,
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+.table-view > .virtual-flow > .scroll-bar > .increment-button,
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}

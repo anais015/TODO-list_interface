@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="243.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="243.0" prefWidth="600.0" styleClass="ajouter" stylesheets="@../../css/image.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="217.0" layoutY="35.0" text="Ajouter un type">
+      <Label layoutX="217.0" layoutY="35.0" text="Ajouter un type" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextField fx:id="nom" layoutX="225.0" layoutY="109.0" />
-      <Label layoutX="126.0" layoutY="113.0" text="Nom du type :" />
+      <Label layoutX="126.0" layoutY="113.0" text="Nom du type :" textFill="WHITE" />
       <Button fx:id="ajouter" layoutX="138.0" layoutY="178.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
       <Button fx:id="retour" layoutX="397.0" layoutY="178.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
    </children>
