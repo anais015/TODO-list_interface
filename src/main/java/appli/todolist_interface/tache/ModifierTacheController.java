@@ -85,8 +85,13 @@ public class ModifierTacheController implements Initializable {
 
     @FXML
     void selectType(ActionEvent event) {
-
+        Type type = new Type();
+        String s = id_tache.getSelectionModel().getSelectedItem().toString();
+        id.setText(String.valueOf(ref_type_cb.getValue()));
+        nom.setText(String.valueOf(ref_type_cb.getValue()));
     }
+
+    //comboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> { textField.setText(...) });
 
     @FXML
     void selectdate(ActionEvent event) {
@@ -116,7 +121,7 @@ public class ModifierTacheController implements Initializable {
     @FXML
     void modifier(ActionEvent event) throws SQLException {
         if (nom.getText().isEmpty() || id.getText().isEmpty() || deadline2.getText().isEmpty()
-                || ) {
+                || estTerminee.getText().isEmpty() || ref_type.getText().isEmpty() || ref_liste.getText().isEmpty()) {
             System.out.println("erreur...");
             if (id.getText().isEmpty()) {
                 System.out.println("Il manque l'id de la liste...");
@@ -135,10 +140,10 @@ public class ModifierTacheController implements Initializable {
 
             }
         }else{
-            Tache tache = new Tache(nom.getText(), Description.getText(),
-                    deadline2.getText(), estTerminee.getText(), ref_liste.getText(),
-                    ref_type.getText(), Integer.parseInt(id.getText())); //converti un texte en chiffre
-            tache.modifierTache();
+           /* Tache tache = new Tache(nom.getText(), Description.getText(),
+                    deadline2.getText(), Boolean.parseBoolean(estTerminee.getText()), Integer.parseInt(ref_liste.getText()),
+                    Integer.parseInt(ref_type.getText()), Integer.parseInt(id.getText())); //converti un texte en chiffre
+            tache.modifierTache();*/
             id.setStyle("");
             nom.setStyle("");
             System.out.println("Changement effectué");

@@ -9,28 +9,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="540.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appli.todolist_interface.Modifiertache">
+<AnchorPane prefHeight="688.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="104.0" layoutY="38.0" text="Modifier une tâche">
+      <Label layoutX="116.0" layoutY="14.0" text="Modifier une tâche">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="86.0" layoutY="113.0" prefHeight="17.0" prefWidth="28.0" text="id :" />
+      <Label layoutX="21.0" layoutY="74.0" prefHeight="25.0" prefWidth="110.0" text="id de la tache :" />
       <Label layoutX="76.0" layoutY="157.0" text="Nom :" />
-      <Label layoutX="43.0" layoutY="412.0" text="Description :" />
-      <Label layoutX="22.0" layoutY="353.0" text="est Terminée ?! : " />
-      <Label layoutX="22.0" layoutY="254.0" text="Choix de la liste :" />
-      <Label layoutX="27.0" layoutY="306.0" text="Choix du type :" />
-      <TextArea fx:id="Description" layoutX="129.0" layoutY="400.0" prefHeight="59.0" prefWidth="200.0" />
-      <ComboBox fx:id="estTerminee" layoutX="129.0" layoutY="349.0" prefWidth="150.0" promptText="0 (faux) ou 1 (vrai)" />
-      <ComboBox fx:id="choix_type" layoutX="129.0" layoutY="302.0" prefWidth="150.0" />
-      <ComboBox fx:id="choix_liste" layoutX="129.0" layoutY="250.0" prefWidth="150.0" />
-      <TextField fx:id="nom" layoutX="130.0" layoutY="153.0" />
-      <ComboBox fx:id="id" layoutX="129.0" layoutY="109.0" prefWidth="150.0" />
-      <Label layoutX="60.0" layoutY="207.0" text="Deadline :" />
-      <Button fx:id="modifier" layoutX="67.0" layoutY="481.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
-      <Button fx:id="retour" layoutX="314.0" layoutY="481.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
-      <DatePicker fx:id="deadline" layoutX="129.0" layoutY="203.0" />
+      <Label layoutX="53.0" layoutY="554.0" text="Description :" />
+      <Label layoutX="31.0" layoutY="460.0" text="est Terminée ?! : " />
+      <Label layoutX="31.0" layoutY="281.0" text="Choix de la liste :" />
+      <Label layoutX="36.0" layoutY="373.0" text="Choix du type :" />
+      <TextArea fx:id="Description" layoutX="156.0" layoutY="554.0" prefHeight="59.0" prefWidth="200.0" />
+      <ComboBox fx:id="EstTerminee" layoutX="155.0" layoutY="456.0" onAction="#selectEstTerminee" prefHeight="25.0" prefWidth="201.0" promptText="0 (faux) ou 1 (vrai)" />
+      <ComboBox fx:id="ref_type_cb" layoutX="155.0" layoutY="369.0" onAction="#selectType" prefHeight="25.0" prefWidth="201.0" promptText="id du type" />
+      <ComboBox fx:id="ref_liste_cb" layoutX="155.0" layoutY="277.0" onAction="#selectListe" prefHeight="25.0" prefWidth="200.0" promptText="id de la liste" />
+      <TextField fx:id="nom" layoutX="155.0" layoutY="153.0" prefHeight="25.0" prefWidth="200.0" />
+      <ComboBox fx:id="id_tache" layoutX="156.0" layoutY="74.0" onAction="#selectTache" prefHeight="25.0" prefWidth="200.0" promptText="id de la tache" />
+      <Label layoutX="66.0" layoutY="198.0" text="Deadline :" />
+      <Button fx:id="modifier" layoutX="29.0" layoutY="633.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" />
+      <Button fx:id="retour" layoutX="353.0" layoutY="633.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+      <DatePicker fx:id="deadline" layoutX="155.0" layoutY="194.0" onAction="#selectdate" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="id" layoutX="153.0" layoutY="114.0" prefHeight="25.0" prefWidth="201.0" />
+      <TextField fx:id="estTerminee" layoutX="153.0" layoutY="503.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="31.0" layoutY="507.0" text="est Terminée ?! : " />
+      <TextField fx:id="ref_type" layoutX="156.0" layoutY="412.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="36.0" layoutY="416.0" text="Choix du type :" />
+      <TextField fx:id="ref_liste" layoutX="156.0" layoutY="325.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="31.0" layoutY="329.0" text="Choix de la liste :" />
+      <TextField fx:id="deadline2" layoutX="156.0" layoutY="236.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="66.0" layoutY="236.0" text="Deadline :" />
+      <Label layoutX="21.0" layoutY="114.0" prefHeight="25.0" prefWidth="110.0" text="id de la tache :" />
    </children>
 </AnchorPane>
